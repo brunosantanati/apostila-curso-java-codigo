@@ -1,4 +1,4 @@
-package me.brunosantana.codigo_apostila_curso_java.chapter01.encapsulamento;
+package me.brunosantana.codigo_apostila_curso_java.chapter01.encapsulamento_validation;
 
 public class Televisao{
 
@@ -27,22 +27,26 @@ public class Televisao{
 	}
 
 	public void setVolume(int volume) {
+		
+		if(volume < 0)
+			throw new IllegalArgumentException("Volume não pode ser menor que zero");
+		
 		this.volume = volume;
 	}
 
-	public void ligar(){
+	void ligar(){
 		System.out.println("Ligar tv");
 	}
 	
-	public void desligar(){
+	void desligar(){
 		System.out.println("Desligar tv");
 	}
 	
-	public void trocarDeCanal(int canal){
+	void trocarDeCanal(int canal){
 		System.out.println("trocar de canal");
 	}
 	
-	public void aumentarVolume(){
+	void aumentarVolume(){
 		volume = volume + 1; 
 	}
 	

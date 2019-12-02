@@ -1,4 +1,4 @@
-package me.brunosantana.codigo_apostila_curso_java.chapter01.encapsulamento;
+package me.brunosantana.codigo_apostila_curso_java.chapter01.encapsulamento_validation;
 
 public class Televisao{
 
@@ -27,6 +27,10 @@ public class Televisao{
 	}
 
 	public void setVolume(int volume) {
+		
+		if(volume < 0)
+			throw new IllegalArgumentException("Volume não pode ser menor que zero");
+		
 		this.volume = volume;
 	}
 
